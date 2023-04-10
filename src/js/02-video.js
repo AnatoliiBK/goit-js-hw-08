@@ -5,7 +5,7 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 const LOCALSTORAGE_KEY = "videoplayer-current-time";
 
-player.on("timeupdate", throttle(onPlay, 1000));
+player.on("timeupdate", throttle(onPlay, 500));
 
 function onPlay({seconds}) {
     

@@ -10,7 +10,7 @@ const STORAGE_KEY = "feedback-form-state";
 const formData = {}
 
 refs.form.addEventListener("submit", onFormSubmit);
-refs.textarea.addEventListener("input", throttle(onTextareaInput, 1000));
+refs.textarea.addEventListener("input", throttle(onTextareaInput, 500));
 
 refs.form.addEventListener("input", event => {   
     formData[event.target.name] = event.target.value;
