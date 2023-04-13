@@ -49,7 +49,11 @@
 import throttle from "lodash.throttle";
 
 const form = document.querySelector(".feedback-form");
-
+let data = {
+    input: document.querySelector("input"),
+    textarea: document.querySelector("textarea")
+}
+console.log(data)
 const STORAGE_KEY = "feedback-form-state";
 
 const formData = {};
@@ -68,13 +72,15 @@ function savedText() {
     const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
     console.log(savedData)
     if (savedData) {
-        formData = savedData;
-        console.log(formData)
+        data.input = savedData.email;
+        data.textarea = savedData.message
+        // data = savedData
+        
+        console.log(data)
     }
 }
 
 form.addEventListener("submit", onFormSubmit);
-// refs.textarea.addEventListener("input", throttle(onTextareaInput, 500));
 
 function onFormSubmit(event) {
     event.preventDefault();
