@@ -35,9 +35,12 @@ function onFormSubmit(event) {
     event.preventDefault();
     
     if (!(data.input.value === "") && !(data.textarea.value === "")) {
+        console.log(formData);
         event.currentTarget.reset();
         localStorage.removeItem(STORAGE_KEY);
         formData = {};
+    } else {
+        alert("Заповніть всі поля!")
     }
     
 };
